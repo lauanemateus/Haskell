@@ -25,4 +25,5 @@ sum 2 3
 and it has to show ```5``` on terminal.
 
 * To clear the terminal:
+  
   `:! clear`
