@@ -4,7 +4,7 @@
 
 ```sudo apt install ghc```
 
-* If the installation is successful, running the command ghci should start the interactive compiler in the terminal.
+* If the installation is successful, running the command `ghci` should start the interactive compiler in the terminal.
 * To save a Haskell code file, use the extension `.hs`, for example, `code_name.hs`.
 * After starting the interactive compiler with `ghci`, you can load a Haskell code file by typing `:load code_name.hs`. Then, you can call a function with its parameters.
 
