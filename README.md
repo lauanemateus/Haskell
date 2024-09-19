@@ -27,3 +27,20 @@ and it has to show ```5``` on terminal.
 * To clear the terminal:
   
   `:! clear`
+
+------------------------------------------------------------------------
+* To see the all functions available:
+
+  `:browse`
+* To import a module use : `:load Module_name`
+  
+  `:load Data.list`
+* To see all the functions of a especific module: `:browse Module_name`
+  
+  `:browse Data.List`
+* To see the function signature: `:info function_name`
+  
+  `:info map`
+* To see more detailed information: `:doc function_name`
+  
+  `:doc map`
