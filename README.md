@@ -27,6 +27,15 @@ and it has to show ```5``` on terminal.
 * To clear the terminal:
   
   `:! clear`
+  
+* Another option is to compile your code without uing interactive compiler. It is just write on terminal:
+  
+  `ghc code_name.hs`
+
+* And after you can execute:
+
+  `./code_name`
+
 
 ------------------------------------------------------------------------
 * To see the all functions available:
