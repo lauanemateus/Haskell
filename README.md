@@ -41,9 +41,9 @@ and it has to show ```5``` on terminal.
 * To see the all functions available:
 
   `:browse`
-* To import a module use : `:load Module_name`
+* To import a module, put on the beginning of the code_name.hs : `import Module_name`
   
-  `:load Data.list`
+  `import Data.List`
 * To see all the functions of a especific module: `:browse Module_name`
   
   `:browse Data.List`
