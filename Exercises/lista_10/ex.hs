@@ -36,7 +36,7 @@ remover' x (No y esq dir) -- dois descendentes
         | x<y = No y (remover' x esq) dir
         | x>y = No y esq (remover' x dir)
         | x==y = let z = mais_dir esq
-            in No z (remover z esq) dir
+            in No z (remover' z esq) dir
 
 -- exemplo
 arvore = No 4 (No 2 (No 1 Vazia Vazia) (No 3 Vazia Vazia)) (No 6 (No 5 Vazia Vazia) (No 7 Vazia Vazia))
