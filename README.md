@@ -8,6 +8,12 @@
 * To save a Haskell code file, use the extension `.hs`, for example, `code_name.hs`.
 * After starting the interactive compiler with `ghci`, you can load a Haskell code file by typing `:load code_name.hs`. Then, you can call a function with its parameters.
 
+You can also compile your code and execute the executable file
+```
+ghc code_name.hs -o prog
+./prog
+```
+
 Exemple:
 
 if your "code_name.hs" is
