@@ -45,5 +45,5 @@ difference conj1 conj2 = differenceAcc conj1 conj2 empty_set
             | otherwise = differenceAcc (union esq dir) conj2 (insert x resposta)
 
 -- exemplo
-conjunto1 = No 4 (No 2 (No 1 Vazia Vazia) (No 3 Vazia Vazia)) (No 6 (No 5 Vazia Vazia) (No 7 Vazia Vazia))
-conjunto2 = No 5 (No 3 (No 6 Vazia Vazia) (No 8 Vazia Vazia)) (No 11 (No 12 Vazia Vazia) (No 13 Vazia Vazia))
+conjunto1 = No 7 (No 5 (No 3 (No 1 Vazia (No 2 Vazia Vazia)) (No 4 Vazia Vazia)) (No 6 Vazia Vazia)) Vazia
+conjunto2 = No 7 (No 2 (No 1 Vazia Vazia) (No 4 Vazia Vazia)) (No 9 (No 8 Vazia Vazia) (No 10 Vazia Vazia))
