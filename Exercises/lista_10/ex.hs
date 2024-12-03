@@ -39,4 +39,5 @@ remover' x (No y esq dir) -- dois descendentes
             in No z (remover' z esq) dir
 
 -- exemplo
-arvore = No 4 (No 2 (No 1 Vazia Vazia) (No 3 Vazia Vazia)) (No 6 (No 5 Vazia Vazia) (No 7 Vazia Vazia))
+arvore1 = No 7 (No 5 (No 3 (No 1 Vazia (No 2 Vazia Vazia)) (No 4 Vazia Vazia)) (No 6 Vazia Vazia)) Vazia
+arvore2 = No 7 (No 2 (No 1 Vazia Vazia) (No 4 Vazia Vazia)) (No 9 (No 8 Vazia Vazia) (No 10 Vazia Vazia))
