@@ -98,8 +98,4 @@ remover' x (No y _ esq dir) -- dois descendentes
         | x>y = rebalancear (No y (maximum [altura esq+1, altura (remover' x dir)+1]) esq (remover' x dir))
         | x==y = let z = mais_dir esq
             in rebalancear (No z (maximum [altura (remover' z esq)+1, altura dir]+1) (remover' z esq) dir)
-
--- exemplo
-arvore = set_altura (No 4 0 (No 2 0 (No 1 0 Vazia Vazia) (No 3 0 Vazia Vazia)) (No 6 0 (No 5 0 Vazia Vazia) (No 7 0 Vazia Vazia)))
-arvore' = remover 4 arvore
-arvore'' = inserirAVL 10 arvore'
+'
