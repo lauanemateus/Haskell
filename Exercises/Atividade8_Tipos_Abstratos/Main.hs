@@ -1,8 +1,6 @@
 import Stack
 import Set
 
------------------- Questão 1 ------------------
-
 calc :: Stack Float -> String -> Stack Float
 calc pilha num 
     | eh_operando num && size pilha < 2 = error "A expressão não é RPN"
@@ -19,7 +17,7 @@ calc pilha num
             | otherwise = False
 
 calcular :: String -> Float
-calcular exp = solve (words exp) empty
+calcular exp = solve (words exp) empty_stack
     where 
         lista_exp = words exp
         solve :: [String] -> Stack Float -> Float
@@ -28,11 +26,8 @@ calcular exp = solve (words exp) empty
             | otherwise = top pilha
         solve (x:xs) pilha = solve xs (calc pilha x)     
 
--- perguntar para o prof a letra (c)
--- RPN :: String -> IO ()
---    RPN exp = 
-
------------------- Questão 2 e 3 ------------------
-
--- fazer uns exemplos
--- (No 4 0 (No 2 0 (No 1 0 Vazia Vazia) (No 3 0 Vazia Vazia)) (No 6 0 (No 5 0 Vazia Vazia) (No 7 0 Vazia Vazia)))
+main = do
+        putStr ("Escreva uma expressão em notação polonesa invertida (RPN)\n")
+        expressao <- getLine
+        putStr("O resultado é " ++ show (calcular expressao) ++ "\n")
+        return ()
