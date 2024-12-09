@@ -40,20 +40,33 @@ soma3 x y z = x + y + z
 
 {-
 
-    3-a) Provar que map f (xs++ys) = map f xs ++ map f ys
+    3-a) Provar que (map f (xs++ys) = map f xs ++ map f ys)
 
     Casos bases:
         xs = [] => (map f (xs++ys) = map f ([]++ys) = map f ys = [] ++ map f ys = map f [] ++ map f ys) 
         ys = [] => (map f (xs++ys) = map f (xs++[]) = map f xs = map f xs ++ [] = map f xs ++ map f [])  
     Hipótese de indução: Suponha que map f (xs++ys) = map f xs ++ map f ys
 
-    Para map f ((x:xs)++ys)     = map f (x:(xs++ys)) -- associatividade concatenação
+    Para map f ((x:xs)++ys)     = map f (x:(xs++ys)) -- associatividade concatenação/cons
                                 = [f x] ++ map f (xs++ys) -- definição map
                                 = [f x] ++ (map f xs ++ map f ys) -- hipótese de indução
-                                = ([f x] ++ map f xs) ++ map f ys -- associatividade concatenação
+                                = ([f x] ++ map f xs) ++ map f ys -- associatividade concatenação/cons
                                 = map f (x:xs) ++ map f ys -- definição map  
 
-    Para map f (xs++(y:ys))     = map f (xs++(y:ys)) -- associatividade
+    3-b) Provar que (map f (reverse xs) = reverse (map f xs))
+
+    Caso base: xs = [] => map f (reverse xs)    = map f (reverse [])
+                                                = map f []
+                                                = []
+
+    Hipótese de indução: Suponha que (map f (reverse xs) = reverse (map f xs))
+
+    Para (map f (reverse (x:xs))    = map f (reverse xs ++ [x]) -- distributividade reverse/++
+                                    = map f (reverse xs) ++ map f [x] -- propriedade item 3-a)
+                                    = reverse (map f xs) ++ map f [x] -- hipótese de indução
+                                    = reverse ((map f [x]) ++ (map f xs) ) -- distributividade reverse/++
+                                    = reverse (map f ([x]++xs)) -- propriedade item 3-a)
+                                    = reverse map f (x:xs) -- definição concatenação/cons
 
 -}
 
