@@ -16,4 +16,16 @@ eh_quadrado_magico id = (and (map verifica_tam all_listas))  && (and (map verifi
 
 exemplo1 = [[6, 7, 2], [1, 5, 9], [8, 3, 4]]
 exemplo2 = [[6, 7, 2], [1, 5, 9], [2, 3, 4]]
-exemplo3 = [[9, 6, 7, 2], [1, 5, 9], [8, 3, 4]]
+exemplo3 = [[9, 6, 7, 2], [1], [8, 3, 4]]
+
+-- problema do troco
+
+decompor :: Int -> [Int] -> [[Int]]
+decompor 0 xs = [[]]
+decompor _ [] = [[]]
+decompor valor (x:xs) 
+    | valor-x<0 = [[]]
+    | otherwise = filter (\lista -> (sum lista == valor)) [(take i (repeat x)) ++ xss | i<-repetir, xss<-(decompor (valor-x*i) xs)]
+        where 
+            repetir = [1..(valor `div` x)]
+    
