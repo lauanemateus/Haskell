@@ -25,7 +25,8 @@ decompor 0 xs = [[]]
 decompor _ [] = [[]]
 decompor valor (x:xs) 
     | valor-x<0 = [[]]
-    | otherwise = filter (\lista -> (sum lista == valor)) [(take i (repeat x)) ++ xss | i<-repetir, xss<-(decompor (valor-x*i) xs)]
+    | otherwise = filter (\lista -> (sum lista == valor)) (coloca_x ++ nao_coloca_x)
         where 
-            repetir = [1..(valor `div` x)]
+            coloca_x = [x:xss | xss<-(decompor (valor-x) (x:xs))]
+            nao_coloca_x = (decompor valor xs)
     
